@@ -43,9 +43,11 @@
     }
     .nav-logo { font-weight: 800; font-size: 1rem; color: var(--text); letter-spacing: -0.02em; }
     .nav-logo span { color: var(--primary); }
-    .nav-links { display: flex; gap: 2rem; }
+    .nav-links { display: flex; gap: 2rem; align-items: center; }
     .nav-links a { font-size: 0.875rem; color: var(--muted); font-weight: 500; transition: color 0.15s; }
     .nav-links a:hover { color: var(--text); text-decoration: none; }
+    .lang-btn { font-size: 0.75rem; font-weight: 700; padding: 0.25rem 0.6rem; border-radius: 6px; border: 1.5px solid var(--border); background: transparent; color: var(--muted); cursor: pointer; letter-spacing: 0.05em; transition: all 0.15s; }
+    .lang-btn:hover { border-color: var(--primary); color: var(--primary); }
 
     /* HERO */
     .hero {
@@ -220,10 +222,11 @@
 <nav>
   <span class="nav-logo">Christian<span>.</span></span>
   <div class="nav-links">
-    <a href="#projects">Projects</a>
-    <a href="#experience">Experience</a>
-    <a href="#skills">Skills</a>
-    <a href="#contact">Contact</a>
+    <a href="#projects" data-es="Proyectos">Projects</a>
+    <a href="#experience" data-es="Experiencia">Experience</a>
+    <a href="#skills" data-es="Habilidades">Skills</a>
+    <a href="#contact" data-es="Contacto">Contact</a>
+    <button class="lang-btn" id="lang-btn" onclick="toggleLang()">ES</button>
   </div>
 </nav>
 
@@ -231,13 +234,13 @@
 <div class="hero">
   <div class="hero-inner">
     <div class="hero-tag">🇨🇱 Santiago, Chile · Digital Health</div>
-    <h1>Clinical Nurse<br>building <span>health technology</span></h1>
-    <p>
+    <h1 data-es="Enfermero Clínico<br>construyendo <span>tecnología en salud</span>">Clinical Nurse<br>building <span>health technology</span></h1>
+    <p data-es="Magíster en Salud Digital (TH Deggendorf, Alemania). 5+ años en unidades clínicas de alta complejidad. Diseñando las herramientas digitales que necesité al lado del paciente.">
       MSc in Digital Health (TH Deggendorf, Germany). 5+ years in high-complexity clinical units.
       Now designing the digital tools I wished existed at the bedside.
     </p>
     <div class="hero-links">
-      <a href="#projects" class="btn btn-primary">View projects</a>
+      <a href="#projects" class="btn btn-primary" data-es="Ver proyectos">View projects</a>
       <a href="https://linkedin.com/in/christian-guajardo-farias-899790175" target="_blank" class="btn btn-white">LinkedIn</a>
       <a href="https://github.com/christiangf28" target="_blank" class="btn btn-white">GitHub</a>
     </div>
@@ -246,43 +249,43 @@
 
 <!-- ABOUT -->
 <div class="section" id="about">
-  <div class="section-label">About</div>
-  <h2>Where clinical meets technical</h2>
+  <div class="section-label" data-es="Sobre mí">About</div>
+  <h2 data-es="Donde lo clínico se encuentra con lo técnico">Where clinical meets technical</h2>
   <div class="about-grid">
     <div class="about-item">
       <div class="icon">🏥</div>
-      <strong>5+ years in ICU / UPC / ER</strong>
+      <strong data-es="5+ años en UCI / UPC / Urgencias">5+ years in ICU / UPC / ER</strong>
       <span>Clínica Alemana de Santiago, Hospital Metropolitano, Hospital Regional de Talca</span>
     </div>
     <div class="about-item">
       <div class="icon">🎓</div>
       <strong>MSc Digital Health</strong>
-      <span>TH. Deggendorf, Germany (2023–2025). HIS, HL7/FHIR, telemedicine, clinical data analytics.</span>
+      <span data-es="TH. Deggendorf, Alemania (2023–2025). HIS, HL7/FHIR, telemedicina, análisis de datos clínicos.">TH. Deggendorf, Germany (2023–2025). HIS, HL7/FHIR, telemedicine, clinical data analytics.</span>
     </div>
     <div class="about-item">
       <div class="icon">📱</div>
-      <strong>Mobile & Web Developer</strong>
-      <span>React Native, Expo, TypeScript, Python. Building patient-facing and hospital management tools.</span>
+      <strong data-es="Desarrollador Mobile & Web">Mobile & Web Developer</strong>
+      <span data-es="React Native, Expo, TypeScript, Python. Construyendo herramientas para pacientes y gestión hospitalaria.">React Native, Expo, TypeScript, Python. Building patient-facing and hospital management tools.</span>
     </div>
     <div class="about-item">
       <div class="icon">🌍</div>
-      <strong>Spanish · English C1 · German A2</strong>
-      <span>International background. Focused on LATAM healthcare digital transformation.</span>
+      <strong>Español · English C1 · German A2</strong>
+      <span data-es="Formación internacional. Enfocado en la transformación digital de la salud en Latinoamérica.">International background. Focused on LATAM healthcare digital transformation.</span>
     </div>
   </div>
 </div>
 
 <!-- PROJECTS -->
 <div class="section" id="projects">
-  <div class="section-label">Projects</div>
-  <h2>What I'm building</h2>
+  <div class="section-label" data-es="Proyectos">Projects</div>
+  <h2 data-es="Lo que estoy construyendo">What I'm building</h2>
 
   <div class="project-card">
     <div class="project-header">
       <div class="project-title"><a href="https://github.com/christiangf28/sistola" target="_blank">Sistola — Blood Pressure Monitor</a></div>
-      <span class="project-badge badge-live">Live on Android</span>
+      <span class="project-badge badge-live" data-es="Live en Android">Live on Android</span>
     </div>
-    <p class="project-desc">
+    <p class="project-desc" data-es="App Android para el manejo integral de la hipertensión. Registra presión arterial, sueño, estrés, actividad y adherencia a medicamentos. Motor de IA contextual genera alertas personalizadas correlacionando variables clínicas. Sistema de gamificación para hábitos de monitoreo diario.">
       Android app for hypertension management. Logs blood pressure, sleep, stress, activity and medication adherence.
       Contextual AI insights generate personalized alerts by correlating clinical variables.
       Gamification system to encourage daily tracking habits.
@@ -302,7 +305,7 @@
       <div class="project-title"><a href="https://github.com/christiangf28/centinela" target="_blank">Centinela — Hospital Intelligence Platform</a></div>
       <span class="project-badge badge-dev">Proof of concept</span>
     </div>
-    <p class="project-desc">
+    <p class="project-desc" data-es="Plataforma web para directivos de hospitales públicos chilenos. Monitoreo de garantías GES, predicción de complejidad clínica y estancia hospitalaria, y generación de reportes ejecutivos con IA — antes de que ocurran los problemas. Incluye análisis CSV drag-and-drop y exportaciones en formato MINSAL.">
       Web platform for Chilean public hospital directors. Monitors GES guarantee compliance, predicts clinical
       complexity and length of stay, and generates AI-powered executive reports — before problems occur.
       Includes drag-and-drop CSV analysis and MINSAL-format exports.
@@ -319,9 +322,9 @@
   <div class="project-card">
     <div class="project-header">
       <div class="project-title"><a href="https://github.com/christiangf28/oztrack" target="_blank">Oztrack — GLP-1 Companion App</a></div>
-      <span class="project-badge badge-live">Live on Android</span>
+      <span class="project-badge badge-live" data-es="Live en Android">Live on Android</span>
     </div>
-    <p class="project-desc">
+    <p class="project-desc" data-es="App móvil para pacientes en tratamiento con GLP-1 (semaglutida, tirzepatida). Registra peso, síntomas, dosis y nutrición. Coach de IA genera insights semanales personalizados correlacionando todas las variables registradas. Disponible en Google Play.">
       Mobile app for patients on GLP-1 medications (semaglutide, tirzepatide). Tracks weight, symptoms,
       doses, and nutrition. AI coach provides personalized weekly insights by correlating all logged variables.
       Published on Google Play.
@@ -341,7 +344,7 @@
       <div class="project-title"><a href="https://christiangf28.github.io/nexus-scanner/" target="_blank">Nexus Scanner — LoL Stats Tracker</a></div>
       <span class="project-badge badge-live">Live</span>
     </div>
-    <p class="project-desc">
+    <p class="project-desc" data-es="Tracker de League of Legends en un solo archivo HTML. Sistema de puntuación con grades S+→F ponderados por rol y elo, historial de partidas, análisis de campeones, química de equipo, soporte multirregión y análisis con IA. Sin backend.">
       Single-file League of Legends stats tracker. Custom scoring system with letter grades (S+→F) weighted by role and elo,
       match history, champion analysis, team chemistry, multi-region support, and AI analysis powered by Claude. No backend required.
     </p>
@@ -357,39 +360,39 @@
 
 <!-- EXPERIENCE -->
 <div class="section" id="experience">
-  <div class="section-label">Experience</div>
-  <h2>Clinical & technical career</h2>
+  <div class="section-label" data-es="Experiencia">Experience</div>
+  <h2 data-es="Trayectoria clínica y técnica">Clinical & technical career</h2>
   <div class="exp-list">
     <div class="exp-item">
       <div class="exp-dot"></div>
       <div class="exp-content">
-        <strong>Guest Professor — Research Methodology</strong>
-        <div class="exp-meta">Universidad de Talca · June 2025</div>
-        <p>Two sessions for nursing students on research methodology. Thesis review and feedback for undergraduates.</p>
+        <strong data-es="Profesor Invitado — Metodología de la Investigación">Guest Professor — Research Methodology</strong>
+        <div class="exp-meta" data-es="Universidad de Talca · Junio 2025">Universidad de Talca · June 2025</div>
+        <p data-es="Dos sesiones para estudiantes de Enfermería en Metodología de la Investigación. Revisión y retroalimentación de tesis de pregrado.">Two sessions for nursing students on research methodology. Thesis review and feedback for undergraduates.</p>
       </div>
     </div>
     <div class="exp-item">
       <div class="exp-dot"></div>
       <div class="exp-content">
-        <strong>Clinical Nurse UPC · Acting Shift Lead</strong>
+        <strong data-es="Enfermero Clínico UPC · Jefe de Turno (i)">Clinical Nurse UPC · Acting Shift Lead</strong>
         <div class="exp-meta">Clínica Alemana de Santiago · 2021–2023</div>
-        <p>Critical care for 2–4 patients (12-bed unit). Mechanical ventilation, invasive hemodynamic monitoring, vasopressors. JCI accreditation participation. HIS protocol standardization.</p>
+        <p data-es="Cuidado crítico de 2–4 pacientes (unidad 12 camas). VMI, monitoreo hemodinámico invasivo, vasoactivos. Participación en acreditación JCI. Estandarización de protocolos en HIS.">Critical care for 2–4 patients (12-bed unit). Mechanical ventilation, invasive hemodynamic monitoring, vasopressors. JCI accreditation participation. HIS protocol standardization.</p>
       </div>
     </div>
     <div class="exp-item">
       <div class="exp-dot"></div>
       <div class="exp-content">
-        <strong>Clinical Nurse ICU</strong>
+        <strong data-es="Enfermero Clínico UCI">Clinical Nurse ICU</strong>
         <div class="exp-meta">Hospital Metropolitano de Santiago · 2020–2021</div>
-        <p>Part of the founding team of a new ICU. Structural organization, clinical flows, COVID-19 protocols and remote monitoring reporting to the Ministry of Health.</p>
+        <p data-es="Parte del equipo fundador de una nueva UCI. Organización estructural, flujos clínicos, protocolos COVID-19 y reporte de monitoreo remoto al Ministerio de Salud.">Part of the founding team of a new ICU. Structural organization, clinical flows, COVID-19 protocols and remote monitoring reporting to the Ministry of Health.</p>
       </div>
     </div>
     <div class="exp-item">
       <div class="exp-dot"></div>
       <div class="exp-content">
-        <strong>Emergency Clinical Nurse</strong>
+        <strong data-es="Enfermero Clínico de Urgencias">Emergency Clinical Nurse</strong>
         <div class="exp-meta">Hospital Regional de Talca · 2019–2020</div>
-        <p>Triage, resuscitation, trauma and general emergencies. Critical care transfers. Early COVID-19 response protocols.</p>
+        <p data-es="Triaje, reanimación, traumatología y urgencias generales. Coordinación de traslados a unidades críticas. Implementación de protocolos COVID-19.">Triage, resuscitation, trauma and general emergencies. Critical care transfers. Early COVID-19 response protocols.</p>
       </div>
     </div>
   </div>
@@ -397,11 +400,11 @@
 
 <!-- SKILLS -->
 <div class="section" id="skills">
-  <div class="section-label">Skills</div>
-  <h2>Competencies</h2>
+  <div class="section-label" data-es="Habilidades">Skills</div>
+  <h2 data-es="Competencias">Competencies</h2>
   <div class="skills-grid">
     <div class="skill-group">
-      <h4>Mobile & Frontend</h4>
+      <h4 data-es="Mobile & Frontend">Mobile & Frontend</h4>
       <ul>
         <li>React Native</li>
         <li>Expo / EAS</li>
@@ -417,7 +420,7 @@
       </ul>
     </div>
     <div class="skill-group">
-      <h4>Digital Health</h4>
+      <h4 data-es="Salud Digital">Digital Health</h4>
       <ul>
         <li>HL7 / FHIR</li>
         <li>HIS Systems</li>
@@ -425,10 +428,10 @@
       </ul>
     </div>
     <div class="skill-group">
-      <h4>Clinical</h4>
+      <h4 data-es="Clínico">Clinical</h4>
       <ul>
-        <li>ICU / Critical Care</li>
-        <li>JCI Accreditation</li>
+        <li data-es="UCI / Cuidado Crítico">ICU / Critical Care</li>
+        <li data-es="Acreditación JCI">JCI Accreditation</li>
         <li>ACLS</li>
       </ul>
     </div>
@@ -437,8 +440,8 @@
 
 <!-- CONTACT -->
 <div class="section" id="contact">
-  <div class="section-label">Contact</div>
-  <h2>Get in touch</h2>
+  <div class="section-label" data-es="Contacto">Contact</div>
+  <h2 data-es="Contáctame">Get in touch</h2>
   <div class="contact-grid">
     <a href="mailto:christiangf28@gmail.com" class="contact-card">
       <span class="contact-icon">✉️</span>
@@ -459,9 +462,30 @@
   </div>
 </div>
 
-<footer>
+<footer data-es="Hecho con HTML/CSS · Alojado en GitHub Pages · Santiago, Chile">
   Built with HTML/CSS · Hosted on GitHub Pages · Santiago, Chile
 </footer>
 
+<script>
+let LANG = localStorage.getItem('portfolio_lang') || 'en';
+function toggleLang() {
+  LANG = LANG === 'en' ? 'es' : 'en';
+  localStorage.setItem('portfolio_lang', LANG);
+  applyLang();
+}
+function applyLang() {
+  document.querySelectorAll('[data-es]').forEach(el => {
+    if (LANG === 'es') {
+      if (!el.dataset.en) el.dataset.en = el.innerHTML;
+      el.innerHTML = el.dataset.es;
+    } else {
+      if (el.dataset.en) el.innerHTML = el.dataset.en;
+    }
+  });
+  document.getElementById('lang-btn').textContent = LANG === 'es' ? 'EN' : 'ES';
+  document.documentElement.lang = LANG;
+}
+if (LANG === 'es') applyLang();
+</script>
 </body>
 </html>
