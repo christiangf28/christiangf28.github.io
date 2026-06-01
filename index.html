@@ -217,6 +217,16 @@
       border-top: 1px solid var(--border);
     }
 
+    /* SCREENSHOTS */
+    .project-screenshots { margin-top: 1.25rem; display: flex; gap: 0.6rem; overflow-x: auto; padding-bottom: 4px; }
+    .project-screenshots img {
+      border-radius: 10px; border: 1px solid var(--border);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08); flex-shrink: 0;
+      display: block;
+    }
+    .screenshots-mobile img { height: 230px; width: auto; }
+    .screenshots-web img { width: 100%; border-radius: 10px; object-fit: cover; object-position: top; max-height: 200px; }
+
     /* SCROLL FADE-IN */
     .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.55s ease, transform 0.55s ease; }
     .fade-in.visible { opacity: 1; transform: none; }
@@ -325,6 +335,10 @@
       Contextual AI insights generate personalized alerts by correlating clinical variables.
       Gamification system to encourage daily tracking habits.
     </p>
+    <div class="project-screenshots screenshots-mobile">
+      <img src="img/sistola-home.png" alt="Sistola home" />
+      <img src="img/sistola-register.png" alt="Sistola registrar presión" />
+    </div>
     <div class="tags">
       <span class="tag">React Native</span>
       <span class="tag">Expo SDK 54</span>
@@ -345,6 +359,9 @@
       complexity and length of stay, and generates AI-powered executive reports — before problems occur.
       Includes drag-and-drop CSV analysis and MINSAL-format exports.
     </p>
+    <div class="project-screenshots screenshots-web">
+      <img src="img/centinela-dashboard.png" alt="Centinela dashboard" />
+    </div>
     <div class="tags">
       <span class="tag">React 19</span>
       <span class="tag">Vite</span>
