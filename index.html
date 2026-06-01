@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Christian Guajardo — Digital Health Developer</title>
   <meta name="description" content="Clinical Nurse & Digital Health Developer. Building technology at the intersection of clinical practice and healthcare innovation." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://christiangf28.github.io/" />
+  <meta property="og:title" content="Christian Guajardo — Digital Health Developer" />
+  <meta property="og:description" content="Clinical Nurse & MSc Digital Health. Building apps at the intersection of clinical practice and healthcare innovation." />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Christian Guajardo — Digital Health Developer" />
+  <meta name="twitter:description" content="Clinical Nurse & MSc Digital Health. Building apps at the intersection of clinical practice and healthcare innovation." />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -210,6 +217,27 @@
       border-top: 1px solid var(--border);
     }
 
+    /* SCROLL FADE-IN */
+    .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.55s ease, transform 0.55s ease; }
+    .fade-in.visible { opacity: 1; transform: none; }
+
+    /* CV DROPDOWN */
+    .cv-dropdown { position: relative; display: inline-flex; }
+    .cv-menu {
+      display: none; position: absolute; top: calc(100% + 6px); left: 0;
+      background: #fff; border: 1px solid var(--border); border-radius: 8px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12); min-width: 160px; z-index: 200; overflow: hidden;
+    }
+    .cv-dropdown:hover .cv-menu,
+    .cv-dropdown:focus-within .cv-menu { display: block; }
+    .cv-menu a {
+      display: flex; align-items: center; gap: 0.5rem;
+      padding: 0.65rem 1rem; font-size: 0.85rem; font-weight: 600;
+      color: var(--text); transition: background 0.12s;
+    }
+    .cv-menu a:hover { background: var(--bg); text-decoration: none; }
+    .cv-menu a .flag { font-size: 1rem; }
+
     @media (max-width: 600px) {
       .about-grid { grid-template-columns: 1fr; }
       .nav-links { gap: 1.25rem; }
@@ -243,12 +271,19 @@
       <a href="#projects" class="btn btn-primary" data-es="Ver proyectos">View projects</a>
       <a href="https://linkedin.com/in/christian-guajardo-farias-899790175" target="_blank" class="btn btn-white">LinkedIn</a>
       <a href="https://github.com/christiangf28" target="_blank" class="btn btn-white">GitHub</a>
+      <div class="cv-dropdown">
+        <button class="btn btn-white" data-es="Descargar CV ↓">Download CV ↓</button>
+        <div class="cv-menu">
+          <a href="CV_Christian_Guajardo_EN.pdf" download><span class="flag">🇬🇧</span> English</a>
+          <a href="CV_Christian_Guajardo_ES.pdf" download><span class="flag">🇨🇱</span> Español</a>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
 <!-- ABOUT -->
-<div class="section" id="about">
+<div class="section fade-in" id="about">
   <div class="section-label" data-es="Sobre mí">About</div>
   <h2 data-es="Donde lo clínico se encuentra con lo técnico">Where clinical meets technical</h2>
   <div class="about-grid">
@@ -276,7 +311,7 @@
 </div>
 
 <!-- PROJECTS -->
-<div class="section" id="projects">
+<div class="section fade-in" id="projects">
   <div class="section-label" data-es="Proyectos">Projects</div>
   <h2 data-es="Lo que estoy construyendo">What I'm building</h2>
 
@@ -358,7 +393,7 @@
 </div>
 
 <!-- EXPERIENCE -->
-<div class="section" id="experience">
+<div class="section fade-in" id="experience">
   <div class="section-label" data-es="Experiencia">Experience</div>
   <h2 data-es="Trayectoria clínica y técnica">Clinical & technical career</h2>
   <div class="exp-list">
@@ -398,7 +433,7 @@
 </div>
 
 <!-- SKILLS -->
-<div class="section" id="skills">
+<div class="section fade-in" id="skills">
   <div class="section-label" data-es="Habilidades">Skills</div>
   <h2 data-es="Competencias">Competencies</h2>
   <div class="skills-grid">
@@ -438,7 +473,7 @@
 </div>
 
 <!-- CONTACT -->
-<div class="section" id="contact">
+<div class="section fade-in" id="contact">
   <div class="section-label" data-es="Contacto">Contact</div>
   <h2 data-es="Contáctame">Get in touch</h2>
   <div class="contact-grid">
@@ -485,6 +520,11 @@ function applyLang() {
   document.documentElement.lang = LANG;
 }
 if (LANG === 'es') applyLang();
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 </script>
 </body>
 </html>
