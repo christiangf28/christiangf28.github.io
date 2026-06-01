@@ -217,6 +217,21 @@
       border-top: 1px solid var(--border);
     }
 
+    /* EDUCATION */
+    .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+    .edu-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; }
+    .edu-card strong { font-size: 1rem; display: block; margin-bottom: 0.25rem; }
+    .edu-school { color: var(--primary); font-size: 0.875rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .edu-meta { font-size: 0.8rem; color: var(--muted); margin-bottom: 0.5rem; }
+    .edu-card p { font-size: 0.875rem; color: var(--muted); line-height: 1.6; margin-top: 0.5rem; }
+
+    /* CERTIFICATIONS */
+    .cert-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 0.75rem; }
+    .cert-item { display: flex; align-items: center; gap: 0.75rem; background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 0.85rem 1rem; }
+    .cert-issuer { font-size: 0.7rem; font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 0.05em; background: rgba(37,99,235,0.08); padding: 0.2rem 0.5rem; border-radius: 4px; white-space: nowrap; }
+    .cert-name { font-size: 0.875rem; font-weight: 600; flex: 1; }
+    .cert-year { font-size: 0.8rem; color: var(--muted); white-space: nowrap; }
+
     /* SCREENSHOTS */
     .project-screenshots { margin-top: 1.25rem; display: flex; gap: 0.6rem; overflow-x: auto; padding-bottom: 4px; }
     .project-screenshots img {
@@ -250,6 +265,7 @@
 
     @media (max-width: 600px) {
       .about-grid { grid-template-columns: 1fr; }
+      .edu-grid { grid-template-columns: 1fr; }
       .nav-links { gap: 1.25rem; }
       .hero { padding: 4rem 1.5rem 3.5rem; }
     }
@@ -452,6 +468,63 @@
         <div class="exp-meta">Hospital Regional de Talca · 2019–2020</div>
         <p data-es="Triaje, reanimación, traumatología y urgencias generales. Coordinación de traslados a unidades críticas. Implementación de protocolos COVID-19.">Triage, resuscitation, trauma and general emergencies. Critical care transfers. Early COVID-19 response protocols.</p>
       </div>
+    </div>
+  </div>
+</div>
+
+<!-- EDUCATION -->
+<div class="section fade-in" id="education">
+  <div class="section-label" data-es="Educación">Education</div>
+  <h2 data-es="Formación académica">Academic background</h2>
+  <div class="edu-grid">
+    <div class="edu-card">
+      <div class="edu-meta">2023 – 2025</div>
+      <strong>MSc Digital Health</strong>
+      <div class="edu-school">TH Deggendorf · Germany</div>
+      <p data-es="Tesis de diseño mixto: «El estado de la educación en salud digital en un programa de enfermería, Región del Maule, Chile». HIS, HL7/FHIR, telemedicina, análisis de datos clínicos, gestión de la innovación.">Mixed-methods thesis: «The state of digital health education in a nursing program, Maule Region, Chile». HIS, HL7/FHIR, telemedicine, clinical data analytics, innovation management.</p>
+    </div>
+    <div class="edu-card">
+      <div class="edu-meta">2014 – 2018</div>
+      <strong data-es="Licenciatura en Enfermería">BSc Nursing</strong>
+      <div class="edu-school">Universidad de Talca · Chile</div>
+    </div>
+  </div>
+</div>
+
+<!-- CERTIFICATIONS -->
+<div class="section fade-in" id="certifications">
+  <div class="section-label" data-es="Certificaciones">Certifications</div>
+  <h2 data-es="Cursos y certificaciones">Courses & certifications</h2>
+  <div class="cert-grid">
+    <div class="cert-item">
+      <span class="cert-issuer">Google</span>
+      <span class="cert-name" data-es="Análisis de Datos">Data Analytics Certificate</span>
+      <span class="cert-year">2026</span>
+    </div>
+    <div class="cert-item">
+      <span class="cert-issuer">Google</span>
+      <span class="cert-name" data-es="Ciberseguridad">Cybersecurity Certificate</span>
+      <span class="cert-year">2026</span>
+    </div>
+    <div class="cert-item">
+      <span class="cert-issuer">Python</span>
+      <span class="cert-name" data-es="Certificación en Python">Python Certification</span>
+      <span class="cert-year">2025</span>
+    </div>
+    <div class="cert-item">
+      <span class="cert-issuer">AHA</span>
+      <span class="cert-name">ACLS</span>
+      <span class="cert-year">2026</span>
+    </div>
+    <div class="cert-item">
+      <span class="cert-issuer">Clínico</span>
+      <span class="cert-name" data-es="Diplomado Paciente Crítico en Enfermería">Diploma in Critical Care Nursing</span>
+      <span class="cert-year">2020</span>
+    </div>
+    <div class="cert-item">
+      <span class="cert-issuer">IAAS</span>
+      <span class="cert-name">IAAS (120 hrs)</span>
+      <span class="cert-year"></span>
     </div>
   </div>
 </div>
